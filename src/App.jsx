@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import Loader from "./components/Loader";
 
 function App() {
   const [amount, setAmount] = useState(1);
+  const [loading, setLoading] = useState(true);
   const [currencies, setCurrencies] = useState([]);
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("EUR");
@@ -18,8 +20,13 @@ function App() {
 
         // 2. Set the current rate for our 'to' currency
         setRate(data.rates[to]);
+        setTimeout(() => setLoading(false), 1200);
       } catch (error) {
         console.error("Error fetching currency:", error);
+        setLoading(false);
+      } finally {
+        // Small timeout so the earth has time to spin!
+        setTimeout(() => setLoading(false), 1000);
       }
     };
 
@@ -30,6 +37,14 @@ function App() {
     setFrom(to);
     setTo(from);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-extrabold text-white mb-8 tracking-tight">
