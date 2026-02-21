@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Loader from "./components/Loader";
+import Flag from "react-world-flags";
 
 function App() {
   const [amount, setAmount] = useState(1);
@@ -71,6 +72,11 @@ function App() {
             <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
               From
             </label>
+            <Flag
+              code={from === "EUR" ? "EU" : from.slice(0, 2)}
+              className="h-3 w-5 shadow-sm rounded-sm mb-2"
+              fallback={<span className="text-[10px]">🏳️</span>}
+            />
             <select
               value={from}
               onChange={(e) => setFrom(e.target.value)}
@@ -96,6 +102,11 @@ function App() {
             <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
               To
             </label>
+            <Flag
+              code={to === "EUR" ? "EU" : to.slice(0, 2)}
+              className="h-3 w-5 shadow-sm rounded-sm mb-2"
+              fallback={<span className="text-[10px]">🏳️</span>}
+            />
             <select
               value={to}
               onChange={(e) => setTo(e.target.value)}
