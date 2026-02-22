@@ -33,3 +33,12 @@ A sleek, modern currency converter built with **React**, featuring real-time exc
 1. **Clone the repository**
    ```bash
    git clone [https://github.com/naziwoprc/Currency-Converter.git](https://github.com/naziwoprc/Currency-Converter.git)
+
+ ## 🧠 What I Learned
+This project was a deep dive into declarative UI and layout animations.
+
+I learned how to manage complex React states for fetching and swapping data.
+
+I mastered the use of LayoutGroup in Framer Motion to allow elements to physically "cross paths" on the screen.
+
+I implemented a custom SVG animation using styled-components to create a unique loading experience.
