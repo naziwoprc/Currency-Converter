@@ -18,7 +18,7 @@ A sleek, modern currency converter built with **React**, featuring real-time exc
 
 ## 🚀 Demo
 
-[Insert your Vercel/GitHub Pages link here]
+[ https://naziwoprc.github.io/Currency-Converter/ ]
 
 ## 🛠️ Tech Stack
 
